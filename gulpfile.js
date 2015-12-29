@@ -28,14 +28,14 @@ gulp.task( 'twentythirteen_style', [ 'download_twentythirteen' ], function () {
 		.pipe( replace( '#e6402a', '#7ccaff' ) )
 		.pipe( replace( '#220e10', '#000000' ) )
 		.pipe( replace( '#db572f', '#337ab7' ) )
-		.pipe( replace( '604px', '750px' ) )
+		.pipe( replace( '604px', '970px' ) )
 		.pipe( replace( 'italic', 'normal' ) )
 		.pipe( replace( 'images/search-icon.png', '../../twentythirteen/images/search-icon.png' ) )
 		.pipe( replace( 'images/search-icon-2x.png', '../../twentythirteen/images/search-icon-2x.png' ) )
 		.pipe( replace( 'input', '__' ) )
 		.pipe( replace( '.error404', '__' ) )
 		.pipe( rename( {
-			basename: 'twentythirteen',
+			basename: 'custom-twentythirteen',
 			extname: '.css'
 		} ) )
 		.pipe( gulp.dest( 'src' ) );
@@ -44,6 +44,13 @@ gulp.task( 'twentythirteen_style', [ 'download_twentythirteen' ], function () {
 gulp.task( 'twitter_bootstrap', function () {
 	return gulp.src( [
 			'node_modules/bootstrap/dist/css/bootstrap.css'
+		] )
+		.pipe( gulp.dest( 'src' ) );
+} );
+
+gulp.task( 'parallax_js', function () {
+	return gulp.src( [
+			'bower_components/parallax.js/parallax.js'
 		] )
 		.pipe( gulp.dest( 'src' ) );
 } );
@@ -59,6 +66,17 @@ gulp.task( 'css', [ 'twentythirteen_style', 'twitter_bootstrap' ], function () {
 		.pipe( gulp.dest( 'css' ) );
 } );
 
+gulp.task( 'js', [ 'parallax_js' ], function () {
+	return gulp.src( [
+			'src/*.js'
+		] )
+		.pipe( uglify( { compress: true } ) )
+		.pipe( rename( {
+			extname: '.min.js'
+		} ) )
+		.pipe( gulp.dest( 'js' ) );
+} );
+
 gulp.task( "genericons", function(){
 	return gulp.src( [
 			'node_modules/genericons/genericons/*',
@@ -66,6 +84,8 @@ gulp.task( "genericons", function(){
 		.pipe( gulp.dest( 'css' ) );
 } );
 
-gulp.task( 'default', [ 'css', 'genericons' ], function () {
+
+
+gulp.task( 'default', [ 'css', 'js', 'genericons' ], function () {
 
 } );

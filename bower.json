@@ -1,0 +1,21 @@
+{
+  "name": "wic2015",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Takayuki Miyauchi"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/wakayama-it-carnival/wic2015",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "parallax.js": "~1.4.1"
+  }
+}

@@ -11,6 +11,8 @@
 ?>
 
 		</div><!-- #main -->
+		<div class="parallax-image" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_parallax_image(); ?>">
+		</div>
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php get_sidebar( 'main' ); ?>
 

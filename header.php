@@ -31,9 +31,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="custom-background-container"></div><!-- .custom-background-container -->
 	<div id="page" class="hfeed site">
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>">
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h1 class="site-title"><?php
 					$logo = get_theme_mod( 'wic2015_logo' );
