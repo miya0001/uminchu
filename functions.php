@@ -3,7 +3,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.2' );
+define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.9' );
 
 load_theme_textdomain( 'uminchu', get_stylesheet_directory() . '/languages' );
 
@@ -27,6 +27,7 @@ add_action( "wp_enqueue_scripts", 'uminchu_wp_enqueue_scripts_01', 11 );
 
 function uminchu_wp_enqueue_scripts_01() {
 	wp_dequeue_script( 'jquery-masonry' );
+	wp_dequeue_script( 'twentythirteen-script' );
 }
 
 
@@ -88,10 +89,20 @@ function uminchu_widgets_init() {
 		'name'          => __( 'Main Widget Area', 'uminchu' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Appears in the footer section of the site.', 'uminchu' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widget-container row">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widget-container">',
 		'after_widget'  => '</div></aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Navigation Widget Area', 'uminchu' ),
+		'id'            => 'sidebar-nav',
+		'description'   => __( 'Appears in the navigation section of the site.', 'uminchu' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widget-container">',
+		'after_widget'  => '</div></aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	unregister_sidebar( 'sidebar-2' );

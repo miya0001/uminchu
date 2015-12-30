@@ -52,6 +52,10 @@ gulp.task( 'parallax_js', function () {
 	return gulp.src( [
 			'bower_components/parallax.js/parallax.js'
 		] )
+		.pipe( replace( 'iPod', '_iPod' ) )
+		.pipe( replace( 'iPhone', '_iPhone' ) )
+		.pipe( replace( 'iPad', '_iPad' ) )
+		.pipe( replace( 'Android', '_Android' ) )
 		.pipe( gulp.dest( 'src' ) );
 } );
 

@@ -53,12 +53,27 @@
 
 			<div id="navbar" class="navbar">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-					<button class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></button>
-					<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
-					<?php get_search_form(); ?>
+					<h1 class="site-name"><a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<div class="menu">
+						<button class="menu-toggle"></button>
+						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
+					</div>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->
+
+		<nav id="large-navigation">
+			<div class="large-navigation-container row">
+				<div class="col-sm-6 hidden-xs">
+					<div class="navigation-widget-area">
+						<?php dynamic_sidebar( 'sidebar-nav' ); ?>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h1 style="margin-top: 0;"><?php _e( 'Menu', 'uminchu' ); ?></h1>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+				</div>
+			</div>
+		</nav>
 
 		<div id="main" class="site-main">
