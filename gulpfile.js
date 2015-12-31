@@ -25,7 +25,7 @@ gulp.task( 'twentythirteen_style', [ 'download_twentythirteen' ], function () {
 		.pipe( replace( '#f7f5e7', '#fafafa' ) )
 		.pipe( replace( '#e8e5ce', '#333' ) )
 		.pipe( replace( '#bc360a', '#337ab7' ) )
-		.pipe( replace( '#e6402a', '#7ccaff' ) )
+		.pipe( replace( '#e6402a', '#337ab7' ) )
 		.pipe( replace( '#220e10', '#000000' ) )
 		.pipe( replace( '#db572f', '#337ab7' ) )
 		.pipe( replace( '604px', '970px' ) )

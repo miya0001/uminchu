@@ -32,7 +32,8 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
-		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>">
+		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>" data-position-y="center">
+			<?php if ( is_home() ): ?>
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h1 class="site-title"><?php
 					$logo = get_theme_mod( 'wic2015_logo' );
@@ -50,10 +51,23 @@
 				?></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
+			<?php elseif ( is_single() ) : ?>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			<?php else : ?>
+				<h1 class="entry-title">
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+				</h1>
+			<?php endif; ?>
+
+			<?php if ( is_home() ): ?>
+				<div id="nav-icon" class="visible-xs-block"><a class="scroll" href="#main"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>
+			<?php endif; ?>
 
 			<div id="navbar" class="navbar">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-					<h1 class="site-name"><a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php if ( ! is_home() ): ?>
+					<h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php endif; ?>
 					<div class="menu">
 						<button class="menu-toggle"></button>
 						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
@@ -70,7 +84,6 @@
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<h1 style="margin-top: 0;"><?php _e( 'Menu', 'uminchu' ); ?></h1>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
 				</div>
 			</div>

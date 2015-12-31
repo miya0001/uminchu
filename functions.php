@@ -105,7 +105,7 @@ function uminchu_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-	unregister_sidebar( 'sidebar-2' );
+	//unregister_sidebar( 'sidebar-2' );
 }
 
 
