@@ -33,52 +33,61 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
 		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>" data-position-y="center">
-			<?php if ( is_home() ): ?>
-			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<h1 class="site-title"><?php
-					$logo = get_theme_mod( 'wic2015_logo' );
-
-					if ( $logo ) {
-						$image = '<img id="site-logo" src="%s" alt="%s" style="max-width:100%%; height:auto;">';
-						printf(
-							$image,
-							esc_url( $logo ),
-							esc_attr( get_bloginfo( 'name' ) )
-						);
-					} else {
-						bloginfo( 'name' );
-					}
-				?></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</a>
-			<?php elseif ( is_single() ) : ?>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php else : ?>
-				<h1 class="entry-title">
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-				</h1>
-			<?php endif; ?>
-
-			<?php if ( is_home() ): ?>
-				<div id="nav-icon" class="visible-xs-block"><a class="scroll" href="#main"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>
-			<?php endif; ?>
-
-			<div id="navbar" class="navbar">
-				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-					<?php if ( ! is_home() ): ?>
+			<nav id="navbar" class="navbar">
+				<div id="site-navigation" class="navigation main-navigation main-container" role="navigation">
 					<h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php endif; ?>
 					<div class="menu">
 						<button class="menu-toggle"></button>
 						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
 					</div>
-				</nav><!-- #site-navigation -->
-			</div><!-- #navbar -->
+				</div><!-- #site-navigation -->
+			</nav><!-- #navbar -->
+
+			<div class="main-container">
+				<?php if ( is_home() ): ?>
+					<div class="home-link main-container">
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php
+							$logo = get_theme_mod( 'uminchu_logo' );
+
+							if ( $logo ) {
+								$image = '<img id="site-logo" src="%s" alt="%s" style="max-width:100%%; height:auto;">';
+								printf(
+									$image,
+									esc_url( $logo ),
+									esc_attr( get_bloginfo( 'name' ) )
+								);
+							} else {
+								bloginfo( 'name' );
+							}
+						?></a></h1>
+						<h2 class="site-description"><?php echo get_theme_mod( 'uminchu_header_content' ); ?></h2>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( is_home() ): ?>
+					<div id="nav-icon" class="visible-xs-block visible-sm-block"><a class="scroll" href="#main"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>
+				<?php endif; ?>
+			</div><!-- .main-container -->
 		</header><!-- #masthead -->
 
 		<nav id="large-navigation">
-			<div class="large-navigation-container row">
+			<div class="main-container row">
 				<div class="col-sm-6 hidden-xs">
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php
+						$logo = get_theme_mod( 'uminchu_logo' );
+
+						if ( $logo ) {
+							$image = '<img id="site-logo" src="%s" alt="%s" style="max-width:100%%; height:auto;">';
+							printf(
+								$image,
+								esc_url( $logo ),
+								esc_attr( get_bloginfo( 'name' ) )
+							);
+						} else {
+							bloginfo( 'name' );
+						}
+					?></a></h1>
+					<div><?php echo get_theme_mod( 'uminchu_header_content' ); ?></div>
 					<div class="navigation-widget-area">
 						<?php dynamic_sidebar( 'sidebar-nav' ); ?>
 					</div>

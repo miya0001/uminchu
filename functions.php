@@ -3,7 +3,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.9' );
+define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.11' );
 
 load_theme_textdomain( 'uminchu', get_stylesheet_directory() . '/languages' );
 
@@ -20,6 +20,7 @@ add_action( 'after_setup_theme', 'uminchu_after_setup_theme_02', 11 );
 
 function uminchu_after_setup_theme_02() {
 	set_post_thumbnail_size( 750, 270, true );
+	remove_theme_support( 'post-formats' );
 }
 
 
@@ -86,13 +87,23 @@ add_action( 'widgets_init', 'uminchu_widgets_init', 11 );
 
 function uminchu_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'uminchu' ),
+		'name'          => __( 'Home Widget Area', 'uminchu' ),
+		'id'            => 'home-widget',
+		'description'   => __( 'Appears in the home section of the site.', 'uminchu' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-container main-container">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget Area', 'uminchu' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Appears in the footer section of the site.', 'uminchu' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widget-container">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="main-container widget-container">',
 		'after_widget'  => '</div></aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	register_sidebar( array(
@@ -105,7 +116,15 @@ function uminchu_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-	//unregister_sidebar( 'sidebar-2' );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar Widget Area', 'uminchu' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Appears in the sidebar section of the site.', 'uminchu' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="main-container widget-container">',
+		'after_widget'  => '</div></aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 
@@ -149,8 +168,8 @@ function uminchu_customize_register( $wp_customize )
 	/*
 	 * Theme customizer for header
 	 */
-	$wp_customize->add_section( 'uminchu_header_background', array(
-		'title'    => __( 'Header Image', 'uminchu' ),
+	$wp_customize->add_section( 'uminchu_header', array(
+		'title'    => __( 'Header', 'uminchu' ),
 		'priority' => 100.1,
 	) );
 
@@ -164,10 +183,22 @@ function uminchu_customize_register( $wp_customize )
 		$wp_customize,
 		'uminchu_header_background',
 		array(
-			'label'	   => __( 'Header Image', 'uminchu' ),
-			'section'  => 'uminchu_header_background',
+			'label'	   => __( 'Image', 'uminchu' ),
+			'section'  => 'uminchu_header',
 			'settings' => 'uminchu_header_background',
 		)
+	) );
+
+	$wp_customize->add_setting( 'uminchu_header_content', array(
+		'default' => get_bloginfo( 'description' ),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( 'uminchu_header_content', array(
+		'label'   => __( 'Content', 'uminchu' ),
+		'section' => 'uminchu_header',
+		'type'    => 'textarea',
 	) );
 
 	/*
