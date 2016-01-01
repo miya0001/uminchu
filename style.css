@@ -351,6 +351,11 @@ div.nav-menu > ul {
 	z-index: 100;
 }
 
+#large-navigation *
+{
+	color: #cccccc;
+}
+
 #large-navigation:before
 {
 	content: "";
