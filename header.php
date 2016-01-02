@@ -35,7 +35,7 @@
 		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>" data-position-y="center">
 			<nav id="navbar" class="navbar">
 				<div id="site-navigation" class="navigation main-navigation main-container" role="navigation">
-					<h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php get_search_form(); ?>
 					<div class="menu">
 						<button class="menu-toggle"></button>
 						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
@@ -44,7 +44,6 @@
 			</nav><!-- #navbar -->
 
 			<div class="main-container">
-				<?php if ( is_home() ): ?>
 					<div class="home-link main-container">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php
 							$logo = get_theme_mod( 'uminchu_logo' );
@@ -60,9 +59,10 @@
 								bloginfo( 'name' );
 							}
 						?></a></h1>
-						<h2 class="site-description"><?php echo get_theme_mod( 'uminchu_header_content' ); ?></h2>
+						<?php if ( is_home() ): ?>
+							<h2 class="site-description"><?php echo get_theme_mod( 'uminchu_header_content' ); ?></h2>
+						<?php endif; ?>
 					</div>
-				<?php endif; ?>
 
 				<?php if ( is_home() ): ?>
 					<div id="nav-icon" class="visible-xs-block visible-sm-block"><a class="scroll" href="#main"><span class="dashicons dashicons-arrow-down-alt2"></span></a></div>

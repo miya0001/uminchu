@@ -1,5 +1,5 @@
 /*
-Theme Name:     WIC2015
+Theme Name:     UMINCHU
 Theme URI:      https://github.com/wakayama-it-carnival/wic2015
 Description:    WIC2015 is a flexsible one-column theme, so it allows you to customize fixed background, logo and footer text.
 Author:         Takayuki Miyauchi
@@ -29,9 +29,18 @@ html, body, #page
 
 .main-container,
 .error404 .page-header .page-title,
-.error404 .page-content
+.error404 .page-content,
+.archive .archive-header .archive-title,
+.archive .archive-header .archive-meta
 {
 	width: 970px !important;
+	max-width: 90% !important;
+	margin: 0 auto !important;
+}
+
+.archive .post
+{
+	width: 750px !important;
 	max-width: 90% !important;
 	margin: 0 auto !important;
 }
@@ -102,7 +111,7 @@ html, body, #page
 
 #masthead
 {
-	height: 200px;
+	height: 250px;
 	width: 100%;
 	position: relative;
 }
@@ -120,8 +129,7 @@ html, body, #page
 	position: absolute;
     left: 0;
     right: 0;
-	top: 50%;
-	transform: translateY( -50% );
+	bottom: 60px;
     margin: auto;
     width: 100%;
 	height: auto;
@@ -131,8 +139,23 @@ html, body, #page
 	font-weight: 900;
 }
 
+.home #masthead .home-link
+{
+	top: 50%;
+	transform: translateY( -25% );
+}
+
 .site-title
 {
+	font-size: 36px;
+	font-weight: 600;
+	padding: 0;
+	line-height: 1.4em;
+}
+
+.home .site-title
+{
+	font-size: 40px;
 	font-weight: 900;
 }
 
@@ -145,6 +168,12 @@ html, body, #page
 
 #masthead .home-link h1,
 #masthead .home-link h2
+{
+	text-align: left;
+}
+
+.home #masthead .home-link h1,
+.home #masthead .home-link h2
 {
 	text-align: center;
 }
@@ -321,22 +350,19 @@ div.nav-menu > ul {
 	outline: none;
 }
 
-.site-header .site-name
+.site-header .search-form
 {
-	position: absolute;
-	top: 50%;
-	transform: translateY( -50% );
-	font-size: 18px;
-	font-weight: bolder;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+	right: auto;
+	left: 0;
 }
 
-.home .site-header .site-name,
-.toggled-on .site-name
+.site-header .search-field
 {
-	display: none;
+	background-image: url(img/search-icon.png);
+}
+
+.site-header .search-field:focus {
+	background-image: url(../twentythirteen/images/search-icon.png);
 }
 
 #large-navigation
@@ -647,6 +673,11 @@ ul.nav-menu ul a:focus,
 
 @media screen and ( max-width: 767px )
 {
+	.home .site-title
+	{
+		font-size: 30px;
+	}
+
 	.home #masthead
 	{
 		height: 100%;
