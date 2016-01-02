@@ -11,7 +11,7 @@
 ?>
 		</div><!-- #main -->
 
-		<div id="parallax-image" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_parallax_image(); ?>">
+		<div id="parallax-image" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_parallax_image(); ?>" data-position-y="bottom">
 		</div>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">

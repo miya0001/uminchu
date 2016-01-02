@@ -367,14 +367,16 @@ div.nav-menu > ul {
 
 #large-navigation
 {
-	position: fixed;
+	position: absolute;
 	top: 0px;
 	width: 100%;
+	height: auto;
 	background-color: rgba( 24, 24, 34, 0.95 );
 	display: none;
 	color: #ffffff;
 	min-height: 100%;
 	z-index: 100;
+	overflow: hidden;
 }
 
 #large-navigation *
@@ -414,7 +416,7 @@ div.nav-menu > ul {
 
 #large-navigation > .main-container
 {
-	padding-top: 90px;
+	padding-top: 60px;
 }
 
 #large-navigation h1
@@ -658,6 +660,12 @@ ul.nav-menu ul a:focus,
 	font-weight: 900 !important;
 }
 
+.home-widget-container .widget:first-child
+{
+	background-color: rgb( 236, 245, 250 );
+	padding: 40px 0 25px 0;
+}
+
 @media screen and ( max-width: 991px )
 {
 	.home #masthead
@@ -665,7 +673,17 @@ ul.nav-menu ul a:focus,
 		height: 100%;
 	}
 
-	.site-description
+	#masthead .site-title
+	{
+		font-size: 30px;
+	}
+
+	.home #masthead .site-title
+	{
+		font-size: 30px;
+	}
+
+	#masthead .site-description
 	{
 		font-size: 16px;
 	}
@@ -673,19 +691,36 @@ ul.nav-menu ul a:focus,
 
 @media screen and ( max-width: 767px )
 {
-	.home .site-title
-	{
-		font-size: 30px;
-	}
-
 	.home #masthead
 	{
 		height: 100%;
 	}
 
-	#masthead .entry-title
+	#masthead .home-link
 	{
-		font-size: 32px;
+		bottom: 40px;
+	}
+
+	.home #masthead .home-link
+	{
+		bottom: 80px;
+		top: auto;
+		transform: none;
+	}
+
+	#masthead .site-title
+	{
+		font-size: 20px;
+	}
+
+	.home #masthead .site-title
+	{
+		font-size: 28px;
+	}
+
+	#masthead .site-description
+	{
+		font-size: 14px;
 	}
 
 	#large-navigation:before
