@@ -12,8 +12,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php do_action( 'uminchu_before_title' ); ?>
-
 		<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
