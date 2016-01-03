@@ -28,7 +28,7 @@ get_header(); ?>
 								<?php the_post_thumbnail(); ?>
 							</div>
 							<?php endif; ?>
-
+							<?php do_action( 'uminchu_before_title' ); ?>
 							<h1 class="entry-title"><?php the_title(); ?></h1>
 						</header><!-- .entry-header -->
 

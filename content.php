@@ -18,6 +18,8 @@
 		</div>
 		<?php endif; ?>
 
+		<?php do_action( 'uminchu_before_title' ); ?>
+
 		<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php else : ?>
