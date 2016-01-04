@@ -27,8 +27,7 @@ html, body, #page
 .error404 .page-content,
 .archive .archive-header .archive-title,
 .archive .archive-header .archive-meta,
-.search .page-header .page-title,
-.navigation .nav-links
+.search .page-header .page-title
 {
 	width: 970px !important;
 	max-width: 90% !important;
@@ -490,21 +489,6 @@ ul.nav-menu ul a:focus,
 	transform: translateY( -50% )
 }
 
-/*.site-content
-{
-}
-
-.archive-title,
-.page-title
-{
-	width: 970px;
-	max-width: 90%;
-	color: #ffffff;
-	font-size: 16px;
-	padding-left: 0;
-	padding-right: 0;
-}*/
-
 .page-header
 {
 	margin-top: 0;
@@ -676,6 +660,16 @@ ul.nav-menu ul a:focus,
 .search-field
 {
 	color: #666666;
+}
+
+.paging-navigation
+{
+	background-color: transparent;
+}
+
+.paging-navigation .meta-nav
+{
+	background-color: rgb( 5, 24, 66 );
 }
 
 @media screen and ( max-width: 991px )
