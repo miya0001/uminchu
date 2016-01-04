@@ -38,13 +38,13 @@
 					<?php get_search_form(); ?>
 					<div class="menu">
 						<button class="menu-toggle"></button>
-						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
+						<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'uminchu' ); ?>"><?php _e( 'Skip to content', 'uminchu' ); ?></a>
 					</div>
 				</div><!-- #site-navigation -->
 			</nav><!-- #navbar -->
 
-			<div class="main-container">
-					<div class="home-link main-container">
+			<div id="branding" class="main-container">
+					<div class="home-link">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php
 							$logo = get_theme_mod( 'uminchu_logo' );
 

@@ -108,6 +108,7 @@ html, body, #page
 	height: 250px;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 
 .home #masthead
@@ -115,15 +116,36 @@ html, body, #page
 	height: 460px;
 }
 
+#masthead #branding
+{
+	position: absolute;
+	top: 50px;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+}
+
+#masthead img#site-logo
+{
+	max-height: 100px;
+	max-width: 100%;
+}
+
+.home #masthead img#site-logo
+{
+	max-height: 200px;
+	max-width: 100%;
+}
+
 #masthead .home-link
 {
 	color: #ffffff;
-	display: block;
 	text-shadow: 1px 1px 2px #555555;
 	position: absolute;
     left: 0;
     right: 0;
-	bottom: 60px;
+	top: 50%;
+	transform: translateY( -50% );
     margin: auto;
     width: 100%;
 	height: auto;
@@ -131,12 +153,6 @@ html, body, #page
 	overflow: hidden;
 	padding: 0;
 	font-weight: 900;
-}
-
-.home #masthead .home-link
-{
-	top: 50%;
-	transform: translateY( -25% );
 }
 
 .site-title
@@ -158,16 +174,8 @@ html, body, #page
 	margin-top: 1em;
 }
 
-
-
 #masthead .home-link h1,
 #masthead .home-link h2
-{
-	text-align: left;
-}
-
-.home #masthead .home-link h1,
-.home #masthead .home-link h2
 {
 	text-align: center;
 }
@@ -692,18 +700,6 @@ ul.nav-menu ul a:focus,
 		height: 100%;
 	}
 
-	#masthead .home-link
-	{
-		bottom: 40px;
-	}
-
-	.home #masthead .home-link
-	{
-		bottom: 80px;
-		top: auto;
-		transform: none;
-	}
-
 	#masthead .site-title
 	{
 		font-size: 20px;
@@ -727,6 +723,11 @@ ul.nav-menu ul a:focus,
 
 @media screen and ( max-width: 359px )
 {
+	.home #masthead img#site-logo
+	{
+		max-height: 150px;
+		max-width: 100%;
+	}
 	.site-description
 	{
 		clip: auto;
