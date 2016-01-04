@@ -3,7 +3,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.20' );
+define( 'UMINCHU_SCRIPTS_VERSION', 'v0.1.21' );
 
 load_theme_textdomain( 'uminchu', get_stylesheet_directory() . '/languages' );
 
