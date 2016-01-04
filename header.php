@@ -32,7 +32,11 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
+		<?php if ( is_home() ): ?>
 		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>" data-position-y="center">
+		<?php else: ?>
+		<header id="masthead" class="site-header fixed-background" role="banner" style="background-image: url(<?php uminchu_get_header_image(); ?>);">
+		<?php endif; ?>
 			<nav id="navbar" class="navbar">
 				<div id="site-navigation" class="navigation main-navigation main-container" role="navigation">
 					<?php get_search_form(); ?>
