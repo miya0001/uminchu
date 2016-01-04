@@ -26,14 +26,17 @@ html, body, #page
 .error404 .page-header .page-title,
 .error404 .page-content,
 .archive .archive-header .archive-title,
-.archive .archive-header .archive-meta
+.archive .archive-header .archive-meta,
+.search .page-header .page-title,
+.navigation .nav-links
 {
 	width: 970px !important;
 	max-width: 90% !important;
 	margin: 0 auto !important;
 }
 
-.archive .post
+.archive .post,
+.search .site-content article
 {
 	width: 750px !important;
 	max-width: 90% !important;
@@ -42,7 +45,7 @@ html, body, #page
 
 .site-main
 {
-	margin-bottom: 24px;
+	margin-bottom: 0;
 }
 
 .home-widget-container .widget
@@ -668,6 +671,11 @@ ul.nav-menu ul a:focus,
 {
 	background-color: rgb( 236, 245, 250 );
 	padding: 40px 0 25px 0;
+}
+
+.search-field
+{
+	color: #666666;
 }
 
 @media screen and ( max-width: 991px )
