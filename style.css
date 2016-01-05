@@ -28,7 +28,7 @@ html, body, #page
 .archive .archive-header .archive-title,
 .archive .archive-header .archive-meta,
 .search .page-header .page-title,
-.single-attachment .image-attachment
+body.attachment .image-attachment
 {
 	width: 970px !important;
 	max-width: 90% !important;
@@ -689,12 +689,12 @@ ul.nav-menu ul a:focus,
     background-size: cover;
 }
 
-.attachment.single .image-attachment
+body.attachment .image-attachment
 {
 	margin-top: 60px !important;
 }
 
-.attachment.single .attachment img
+body.attachment .attachment img
 {
 	margin: 60px 0;
 	max-width: 100%;
