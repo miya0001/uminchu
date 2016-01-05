@@ -27,7 +27,8 @@ html, body, #page
 .error404 .page-content,
 .archive .archive-header .archive-title,
 .archive .archive-header .archive-meta,
-.search .page-header .page-title
+.search .page-header .page-title,
+.single-attachment .image-attachment
 {
 	width: 970px !important;
 	max-width: 90% !important;
@@ -677,6 +678,31 @@ ul.nav-menu ul a:focus,
 	background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.attachment.single .image-attachment
+{
+	margin-top: 60px !important;
+}
+
+.attachment.single .attachment img
+{
+	margin: 60px 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	border: 3px double #dedede;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.attachment .entry-meta
+{
+	text-align: left;
+}
+
+.attachment .hentry
+{
+	background-color: transparent;
 }
 
 @media screen and ( max-width: 991px )
