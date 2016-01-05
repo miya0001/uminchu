@@ -28,6 +28,7 @@ html, body, #page
 .archive .archive-header .archive-title,
 .archive .archive-header .archive-meta,
 .search .page-header .page-title,
+.search .page-content,
 body.attachment .image-attachment
 {
 	width: 970px !important;
