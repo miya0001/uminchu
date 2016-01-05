@@ -525,6 +525,15 @@ ul.nav-menu ul a:focus,
 	font-weight: 900;
 }
 
+.entry-content ul
+{
+	padding-left: 20px;
+}
+
+.entry-content
+{
+	color: #666666;
+}
 
 #secondary
 {
