@@ -32,11 +32,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
-		<?php if ( is_home() ): ?>
 		<header id="masthead" class="site-header" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php uminchu_get_header_image(); ?>" data-position-y="center">
-		<?php else: ?>
-		<header id="masthead" class="site-header fixed-background" role="banner" style="background-image: url(<?php uminchu_get_header_image(); ?>);">
-		<?php endif; ?>
 			<nav id="navbar" class="navbar">
 				<div id="site-navigation" class="navigation main-navigation main-container" role="navigation">
 					<?php get_search_form(); ?>
@@ -92,12 +88,13 @@
 						}
 					?></a></h1>
 					<div><?php echo get_theme_mod( 'uminchu_header_content' ); ?></div>
-					<div class="navigation-widget-area">
-						<?php dynamic_sidebar( 'sidebar-nav' ); ?>
-					</div>
 				</div>
 				<div class="col-sm-6">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+
+					<div class="navigation-widget-area">
+						<?php dynamic_sidebar( 'sidebar-nav' ); ?>
+					</div>
 				</div>
 			</div>
 		</nav>

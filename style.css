@@ -120,7 +120,7 @@ body.attachment .image-attachment
 
 #masthead
 {
-	height: 250px;
+	height: 300px;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -142,7 +142,7 @@ body.attachment .image-attachment
 
 #masthead img#site-logo
 {
-	max-height: 160px;
+	max-height: 200px;
 	max-width: 100%;
 }
 
