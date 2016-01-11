@@ -44,6 +44,12 @@ body.attachment .image-attachment
 	margin: 0 auto !important;
 }
 
+.page .hentry,
+.single .hentry
+{
+	padding-top: 24px;
+}
+
 .site-main
 {
 	margin-bottom: 0;
@@ -84,6 +90,11 @@ body.attachment .image-attachment
 	border: 1px solid #dfdfdf;
 	margin-top: 24px;
 	border-radius: 2px;
+}
+
+#tertiary .widget:first-child
+{
+	margin-top: 0;
 }
 
 #wpadminbar
