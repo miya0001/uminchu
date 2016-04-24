@@ -820,7 +820,7 @@ body.attachment .attachment img
 	.entry-content h5,
 	.entry-content h6
 	{
-		font-size: 110%;
+		font-size: 18px !important;
 	}
 }
 
