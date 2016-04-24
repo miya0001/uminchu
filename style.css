@@ -22,6 +22,12 @@ html, body, #page
 	height: 100%;
 }
 
+.hentry
+{
+	padding-bottom: 80px;
+	padding-top: 0;
+}
+
 .main-container,
 .error404 .page-header .page-title,
 .error404 .page-content,
@@ -39,9 +45,30 @@ body.attachment .image-attachment
 .archive .post,
 .search .site-content article
 {
+	/*width: 750px !important;
+	max-width: 90% !important;
+	margin: 0 auto !important;*/
+}
+
+.archive .post .entry-content,
+.archive .post .entry-meta,
+.archive .post .entry-header .entry-title
+{
 	width: 750px !important;
 	max-width: 90% !important;
-	margin: 0 auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.archive .post .entry-header
+{
+	width: 100% !important;
+}
+
+.entry-thumbnail .size-post-thumbnail
+{
+	width: 100%;
+	margin-bottom: 40px;
 }
 
 .page .hentry,
