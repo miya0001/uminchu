@@ -23,6 +23,7 @@ html, body, #page
 }
 
 .singular #primary,
+.single #primary,
 .page #primary
 {
 	margin-top: 25px;
