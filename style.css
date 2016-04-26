@@ -22,7 +22,8 @@ html, body, #page
 	height: 100%;
 }
 
-.singular #primary
+.singular #primary,
+.page #primary
 {
 	margin-top: 25px;
 }
